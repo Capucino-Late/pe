@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MYnyak Engsel Sunset — Web</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>MYnyak Engsel Sunset</h1>
+    <nav>
+      <button data-route="home" class="navbtn">Beranda</button>
+      <button data-route="packages" class="navbtn">Paket</button>
+      <button data-route="buy" class="navbtn">Beli Paket</button>
+      <button data-route="history" class="navbtn">Riwayat</button>
+      <button data-route="account" class="navbtn">Akun</button>
+      <button data-route="help" class="navbtn">Bantuan</button>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section id="home" class="view">
+      <h2>Beranda</h2>
+      <div id="balance">Memuat saldo...</div>
+      <div id="quick-packs"></div>
+    </section>
+
+    <section id="packages" class="view hidden">
+      <h2>Daftar Paket</h2>
+      <div id="packages-list">Memuat paket...</div>
+    </section>
+
+    <section id="buy" class="view hidden">
+      <h2>Beli Paket</h2>
+      <form id="buy-form">
+        <label>Nomor HP / ID:
+          <input type="text" name="phone" required>
+        </label>
+        <label>Pilih Paket:
+          <select name="package_id" id="buy-pack-select"></select>
+        </label>
+        <button type="submit">Beli</button>
+      </form>
+      <div id="buy-result"></div>
+    </section>
+
+    <section id="history" class="view hidden">
+      <h2>Riwayat Transaksi</h2>
+      <div id="history-list">Memuat riwayat...</div>
+    </section>
+
+    <section id="account" class="view hidden">
+      <h2>Akun</h2>
+      <p>Mode: <span id="mode">-</span></p>
+      <p>Jangan simpan secret di UI. Set environment variables di Cloudflare Pages.</p>
+      <pre id="env-list">Variabel yang diperlukan:
+- MOCK_MODE (true/false)
+- PROVIDER_API_URL
+- PROVIDER_API_KEY
+</pre>
+    </section>
+
+    <section id="help" class="view hidden">
+      <h2>Bantuan & Tentang</h2>
+      <div>
+        <p>Ini adalah versi web dari CLI. Gunakan menu untuk mengakses fitur.</p>
+        <p>Instruksi deploy ada di file <code>PAGES-DEPLOY.md</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>MYnyak Engsel Sunset — Web UI (Cloudflare Pages Functions)</small>
+  </footer>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
